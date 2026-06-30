@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "The Floorg Helper",
+  "version": "2.0.0",
+  "description": "Auto reverse-image-searches clue images from The Floor Discord game",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://discord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://discord.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {}
+}
